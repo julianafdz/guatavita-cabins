@@ -571,6 +571,90 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--color-clean-white); /* White text for hero title */
 }
 
+/* Cozy Cabins Intro Section */
+.cozy-cabins-intro-section {
+  background-color: var(--color-light-wood-beige); /* Background matching the image */
+  padding: 4rem 2rem;
+  text-align: center;
+  scroll-snap-align: start;
+  min-height: 100vh; /* Make it occupy full viewport height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.cozy-cabins-intro-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.cozy-cabins-intro-title {
+  font-family: var(--font-lato);
+  font-size: 4rem;
+  font-weight: bold;
+  color: var(--color-deep-black);
+  margin-bottom: 2.5rem;
+}
+
+.cozy-cabins-intro-button {
+  display: inline-block;
+  background-color: var(--color-golden-wood);
+  color: var(--color-deep-black);
+  font-family: var(--font-lato);
+  font-weight: bold;
+  padding: 1rem 2.5rem;
+  border-radius: 9999px;
+  text-decoration: none;
+  transition: background-color 0.3s ease-in-out;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.cozy-cabins-intro-button:hover {
+  background-color: darken(var(--color-golden-wood), 10%);
+}
+
+.cozy-cabins-features-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.feature-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.feature-icon {
+  width: 150px;
+  height: 150px;
+  background-color: transparent; /* Icons will be SVGs or similar */
+  margin-bottom: 0.5rem;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.feature-title {
+  font-family: var(--font-lato);
+  font-size: 1.75rem;
+  font-weight: bold;
+  color: var(--color-deep-black);
+  margin-bottom: 0.25rem;
+}
+
+.feature-description {
+  font-family: var(--font-lato);
+  font-size: 1rem;
+  color: var(--color-soft-charcoal);
+  line-height: 1.5;
+}
+
 .section-full-height {
   width: 100%;
   min-height: 100vh; /* Minimum full viewport height */

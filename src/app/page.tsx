@@ -20,6 +20,34 @@ export default function Home() {
         </div>
       </section>
 
+      {/* New Section: Cozy Cabin Rentals Introduction */}
+      <section className="cozy-cabins-intro-section">
+        <div className="cozy-cabins-intro-container">
+          <h2 className="cozy-cabins-intro-title">Cozy Cabin Rentals</h2>
+          <a href="/booking" className="cozy-cabins-intro-button">Book Now</a>
+
+          <div className="cozy-cabins-features-grid">
+            <div className="feature-item">
+              <Image src="/images/icons/icon-wood.png" className="feature-icon" alt="Wood Interiors" width={80} height={80} />
+              <h3 className="feature-title">Wood Interiors</h3>
+              <p className="feature-description">Beautiful, natural wood design</p>
+            </div>
+
+            <div className="feature-item">
+              <Image src="/images/icons/icon-house.png" className="feature-icon" alt="Loft Spaces" width={80} height={80} />
+              <h3 className="feature-title">Loft Spaces</h3>
+              <p className="feature-description">Additional upstairs sleeping area</p>
+            </div>
+
+            <div className="feature-item">
+              <Image src="/images/icons/icon-mountains.png" className="feature-icon" alt="Great Views" width={80} height={80} />
+              <h3 className="feature-title">Great Views</h3>
+              <p className="feature-description">Cabins with scenic surroundings</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Discover Guatavita Cabins Section: Text Left, Image Right */}
       <section className="section-full-height">
         <div className="section-content-wrapper">
@@ -27,8 +55,8 @@ export default function Home() {
             <h2 className="section-title">Discover Guatavita Cabins</h2>
             <p className="section-paragraph">
               Nestled in the breathtaking mountains of Guatavita, Colombia, our cabins offer an unparalleled escape with splendid views of the artificial lake. 
-              Immerse yourself in nature's tranquility while enjoying the comfort and warmth of our cozy accommodations. 
-              Whether you're seeking a romantic getaway, a family adventure, or a peaceful retreat, Guatavita Cabins is your perfect destination.
+              Immerse yourself in nature&apos;s tranquility while enjoying the comfort and warmth of our cozy accommodations. 
+              Whether you&apos;re seeking a romantic getaway, a family adventure, or a peaceful retreat, Guatavita Cabins is your perfect destination.
             </p>
           </div>
           <div className="section-image-block">
