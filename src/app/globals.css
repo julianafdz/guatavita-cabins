@@ -1,26 +1,691 @@
-@import "tailwindcss";
-
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+  --color-golden-wood: #D9A441;
+  --color-light-wood-beige: #F5DEB3;
+  --color-deep-black: #2C2C2C;
+  --color-soft-charcoal: #4F4F4F;
+  --color-clean-white: #FFFFFF;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --foreground-rgb: var(--color-deep-black);
+  --background-rgb: var(--color-light-wood-beige);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --foreground-rgb: var(--color-clean-white);
+    --background-rgb: var(--color-deep-black);
   }
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-rgb));
+  font-family: lato;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: lato;
+  color: var(--color-deep-black); /* Default for headings */
+}
+
+/* Base layout styles */
+.root-layout-body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: var(--color-light-wood-beige);
+  color: var(--color-deep-black);
+  font-family: lato;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.root-layout-main {
+  flex-grow: 1;
+}
+
+/* Carousel styles */
+.carousel .control-arrow {
+  color: var(--color-golden-wood); 
+}
+
+.carousel .control-dots .dot {
+  background: var(--color-golden-wood);
+  box-shadow: none;
+}
+
+.carousel .control-dots .dot.selected {
+  background: var(--color-golden-wood); 
+}
+
+/* Header Styles */
+.header-container {
+  background-color: var(--color-deep-black);
+  color: var(--color-clean-white);
+  padding: 1rem 0; /* Removed horizontal padding, kept vertical */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 100%; /* Ensure full width */
+  margin-top: 0; /* Ensure no top margin */
+}
+
+.header-nav {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-logo {
+  font-family: lato;
+  font-size: 1.5rem; /* Approximation based on image */
+  font-weight: bold;
+  color: var(--color-clean-white);
+  text-decoration: none;
+  letter-spacing: 0.1em;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 2rem; /* Adjusted spacing */
+  text-transform: uppercase;
+}
+
+.nav-link {
+  color: var(--color-clean-white);
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+  font-family: lato; /* Assuming Lato for nav links based on image */
+  font-size: 1rem;
+}
+
+.nav-link:hover {
+  color: var(--color-golden-wood);
+}
+
+.menu-icon {
+  background: none;
+  border: none;
+  color: var(--color-clean-white);
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: none; /* Hidden by default, will be shown for mobile */
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+  .menu-icon {
+    display: block;
+  }
+}
+
+/* Home Page (Welcome) Styles */
+.page-container {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 2rem;
+  background-color: var(--color-light-wood-beige); /* Background for content area */
+}
+
+.page-title {
+  font-family: lato;
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: center;
+  color: var(--color-deep-black);
+  margin-bottom: 2rem;
+}
+
+.page-section {
+  margin-bottom: 3rem;
+}
+
+.section-title {
+  font-family: lato;
+  font-size: 1.875rem;
+  font-weight: 600;
+  color: var(--color-deep-black);
+  margin-bottom: 1rem;
+}
+
+.section-paragraph,
+.section-paragraph-mb,
+.section-paragraph-mt {
+  font-family: lato;
+  font-size: 1.125rem;
+  color: var(--color-soft-charcoal);
+  line-height: 1.625;
+}
+
+.section-paragraph-mb {
+  margin-bottom: 1rem;
+}
+
+.section-paragraph-mt {
+  margin-top: 1rem;
+}
+
+.section-list {
+  list-style: disc;
+  list-style-position: inside;
+  font-family: lato;
+  font-size: 1.125rem;
+  color: var(--color-soft-charcoal);
+  line-height: 1.625;
+}
+
+/* Cabins Page Styles */
+.cabins-container {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 2rem;
+  background-color: var(--color-light-wood-beige); /* Background for content area */
+}
+
+.cabins-title {
+  font-family: lato;
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: center;
+  color: var(--color-deep-black);
+  margin-bottom: 2rem;
+}
+
+.cabins-description {
+  font-family: lato;
+  font-size: 1.125rem;
+  color: var(--color-soft-charcoal);
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.cabins-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.cabin-card-link {
+  display: block;
+  text-decoration: none;
+}
+
+.cabin-card {
+  background-color: var(--color-clean-white);
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.cabin-card:hover {
+  transform: scale(1.03);
+}
+
+.cabin-image-wrapper {
+  position: relative;
+  height: 12rem;
+  width: 100%;
+}
+
+.cabin-image {
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+}
+
+.cabin-card-content {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.cabin-name {
+  font-family: lato;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--color-deep-black);
+  margin-bottom: 0.5rem;
+}
+
+.cabin-description-short {
+  font-family: lato;
+  color: var(--color-soft-charcoal);
+  margin-bottom: 1rem;
+  flex-grow: 1;
+  font-size: 0.95rem;
+}
+
+.cabin-details-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cabin-capacity {
+  color: var(--color-soft-charcoal);
+  font-weight: bold;
+  font-family: lato;
+  font-size: 0.9rem;
+}
+
+.view-details-button {
+  background-color: var(--color-golden-wood);
+  color: var(--color-deep-black);
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  transition: background-color 0.3s ease-in-out;
+  border: none;
+  cursor: pointer;
+  font-family: lato;
+  font-size: 0.9rem;
+}
+
+.view-details-button:hover {
+  background-color: darken(var(--color-golden-wood), 10%);
+}
+
+/* Activities Page Styles */
+.activities-container {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 2rem;
+  background-color: var(--color-light-wood-beige); /* Background for content area */
+}
+
+.activities-title {
+  font-family: lato;
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: center;
+  color: var(--color-deep-black);
+  margin-bottom: 2rem;
+}
+
+.activities-description-intro {
+  font-family: lato;
+  font-size: 1.125rem;
+  color: var(--color-soft-charcoal);
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.activities-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.activity-card {
+  background-color: var(--color-clean-white);
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+}
+
+.activity-card:hover {
+  transform: scale(1.03);
+}
+
+.activity-image-wrapper {
+  position: relative;
+  height: 15rem;
+  width: 100%;
+}
+
+.activity-image {
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+}
+
+.activity-card-content {
+  padding: 1.5rem;
+}
+
+.activity-name {
+  font-family: lato;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--color-deep-black);
+  margin-bottom: 0.5rem;
+}
+
+.activity-description {
+  font-family: lato;
+  color: var(--color-soft-charcoal);
+  line-height: 1.625;
+}
+
+/* Booking Page Styles */
+.booking-container {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 2rem;
+  background-color: var(--color-light-wood-beige); /* Background for content area */
+}
+
+.booking-title {
+  font-family: var(--font-merriweather);
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: center;
+  color: var(--color-deep-black);
+  margin-bottom: 2rem;
+}
+
+.booking-intro-description {
+  font-family: lato;
+  font-size: 1.125rem;
+  color: var(--color-soft-charcoal);
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.booking-methods-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.booking-card {
+  background-color: var(--color-clean-white);
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.booking-method-title {
+  font-family: lato;
+  font-size: 1.875rem;
+  font-weight: 600;
+  color: var(--color-deep-black);
+  margin-bottom: 1rem;
+}
+
+.booking-method-description {
+  font-family: lato;
+  color: var(--color-soft-charcoal);
+  line-height: 1.625;
+  margin-bottom: 1.5rem;
+}
+
+.booking-form-button {
+  background-color: var(--color-golden-wood);
+  color: var(--color-deep-black);
+  font-weight: bold;
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  font-size: 1.25rem;
+  transition: background-color 0.3s ease-in-out;
+  text-decoration: none;
+  font-family: lato;
+}
+
+.booking-form-button:hover {
+  background-color: darken(var(--color-golden-wood), 10%);
+}
+
+.booking-platform-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+@media (min-width: 640px) {
+  .booking-platform-buttons {
+    flex-direction: row;
+  }
+}
+
+.airbnb-button {
+  background-color: #ff5a5f; /* Airbnb brand color */
+  color: var(--color-clean-white);
+  font-weight: bold;
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  font-size: 1.25rem;
+  transition: background-color 0.3s ease-in-out;
+  text-decoration: none;
+  font-family: lato;
+}
+
+.airbnb-button:hover {
+  background-color: #e00007; /* Darker Airbnb color */
+}
+
+.bookingcom-button {
+  background-color: #003b95; /* Booking.com brand color */
+  color: var(--color-clean-white);
+  font-weight: bold;
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  font-size: 1.25rem;
+  transition: background-color 0.3s ease-in-out;
+  text-decoration: none;
+  font-family: lato;
+}
+
+.bookingcom-button:hover {
+  background-color: #00225e; /* Darker Booking.com color */
+}
+
+.booking-info-section {
+  margin-top: 3rem;
+  text-align: center;
+}
+
+.booking-info-title {
+  font-family: lato;
+  font-size: 1.875rem;
+  font-weight: 600;
+  color: var(--color-deep-black);
+  margin-bottom: 1rem;
+}
+
+.booking-info-paragraph {
+  font-family: lato;
+  font-size: 1.125rem;
+  color: var(--color-soft-charcoal);
+  line-height: 1.625;
+}
+
+.booking-info-paragraph-mt {
+  font-family: lato;
+  font-size: 1.125rem;
+  color: var(--color-soft-charcoal);
+  line-height: 1.625;
+  margin-top: 1rem;
+}
+
+/* Home Page (Welcome) Styles for Full-Screen Sections */
+.full-page-scroll-container {
+  overflow-y: auto;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+  scroll-snap-type: y mandatory;
+  height: calc(100vh - var(--header-height, 64px)); /* Adjust for header height */
+}
+
+.hero-section-alt {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Full viewport height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--color-clean-white);
+  text-align: center;
+  scroll-snap-align: start;
+}
+
+.hero-background-image-alt {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.hero-background-image-alt::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3); /* Semi-transparent overlay */
+}
+
+.hero-content-alt {
+  z-index: 1;
+}
+
+.hero-title-alt {
+  font-family: lato;
+  font-size: 4rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  color: var(--color-clean-white); /* White text for hero title */
+}
+
+.section-full-height {
+  width: 100%;
+  min-height: 100vh; /* Minimum full viewport height */
+  display: flex;
+  align-items: center;
+  padding: 4rem 2rem;
+  background-color: var(--color-light-wood-beige);
+  color: var(--color-deep-black);
+  scroll-snap-align: start;
+}
+
+.section-content-wrapper {
+  display: flex;
+  flex-direction: column; /* Default for mobile */
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .section-content-wrapper {
+    flex-direction: row; /* Desktop: text left, image right */
+    align-items: center;
+  }
+
+  .section-reverse .section-content-wrapper {
+    flex-direction: row-reverse; /* Desktop: image left, text right */
+  }
+}
+
+.section-text-block {
+  flex: 1;
+  padding: 1rem;
+}
+
+.section-image-block {
+  flex: 1;
+  position: relative;
+  height: 400px; /* Fixed height for image block */
+  width: 100%;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer Styles (matching Header) */
+.footer-container {
+  background-color: var(--color-deep-black);
+  color: var(--color-clean-white);
+  padding: 1rem 0; /* Match header padding */
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow similar to header */
+  width: 100%;
+  text-align: center;
+}
+
+.footer-content-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem; /* Inner padding for content */
+}
+
+.footer-text {
+  font-family: lato;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-clean-white);
+}
+
+.footer-text:last-child {
+  margin-bottom: 0;
+}
+
+.hero-background-image-alt img {
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+}
+
+.section-image-block img {
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+}
+
+.cabin-image-wrapper img {
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+}
+
+.activity-image-wrapper img {
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+}
+
+/* Google Maps Link Styling */
+.google-maps-link {
+  display: inline-flex;
+  align-items: center;
+  background-color: var(--color-golden-wood);
+  color: var(--color-deep-black);
+  font-family: lato;
+  font-weight: bold;
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  text-decoration: none;
+  transition: background-color 0.3s ease-in-out;
+  margin-top: 1.5rem;
+}
+
+.google-maps-link:hover {
+  background-color: darken(var(--color-golden-wood), 10%);
+}
+
+.ubication-icon {
+  font-size: 1.2rem; /* Adjust icon size as needed */
+  margin-right: 0.5rem;
 }
