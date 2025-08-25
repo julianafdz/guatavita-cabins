@@ -528,6 +528,10 @@ h1, h2, h3, h4, h5, h6 {
   height: calc(100vh - var(--header-height, 64px)); /* Adjust for header height */
 }
 
+::-webkit-scrollbar { 
+  display: none; 
+}
+
 .hero-section-alt {
   position: relative;
   width: 100%;
