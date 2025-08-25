@@ -21,7 +21,7 @@
 body {
   margin: 0;
   color: rgb(var(--foreground-rgb));
-  background: var(--color-clean-white); /* Change to Clean white */
+  background: var(--color-light-wood-beige); /* Changed to light wood beige */
   font-family: var(--font-lato);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -37,7 +37,7 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background-color: var(--color-clean-white); /* Change to Clean white */
+  background-color: var(--color-light-wood-beige); /* Changed to light wood beige */
   color: var(--color-deep-black);
   font-family: var(--font-lato);
   -webkit-font-smoothing: antialiased;
@@ -135,7 +135,7 @@ h1, h2, h3, h4, h5, h6 {
   margin-left: auto;
   margin-right: auto;
   padding: 2rem;
-  background-color: var(--color-clean-white); /* Background for content area */
+  background-color: var(--color-light-wood-beige); /* Changed to light wood beige */
 }
 
 .page-title {
@@ -153,7 +153,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .section-title {
   font-family: var(--font-lato);
-  font-size: 1.875rem;
+  font-size: 2rem;
   font-weight: 600;
   color: var(--color-deep-black);
   margin-bottom: 1rem;
@@ -191,7 +191,7 @@ h1, h2, h3, h4, h5, h6 {
   margin-left: auto;
   margin-right: auto;
   padding: 2rem;
-  background-color: var(--color-clean-white); /* Background for content area */
+  background-color: var(--color-light-wood-beige); /* Changed to light wood beige */
 }
 
 .cabins-title {
@@ -223,7 +223,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .cabin-card {
-  background-color: var(--color-light-wood-beige);
+  background-color: var(--color-clean-white); /* Changed to clean white */
   border-radius: 0.5rem;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   overflow: hidden;
@@ -307,7 +307,7 @@ h1, h2, h3, h4, h5, h6 {
   margin-left: auto;
   margin-right: auto;
   padding: 2rem;
-  background-color: var(--color-clean-white); /* Background for content area */
+  background-color: var(--color-light-wood-beige); /* Changed to light wood beige */
 }
 
 .activities-title {
@@ -334,7 +334,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .activity-card {
-  background-color: var(--color-light-wood-beige);
+  background-color: var(--color-clean-white); /* Changed to clean white */
   border-radius: 0.5rem;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   overflow: hidden;
@@ -380,7 +380,7 @@ h1, h2, h3, h4, h5, h6 {
   margin-left: auto;
   margin-right: auto;
   padding: 2rem;
-  background-color: var(--color-clean-white); /* Background for content area */
+  background-color: var(--color-light-wood-beige); /* Changed to light wood beige */
 }
 
 .booking-title {
@@ -407,7 +407,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .booking-card {
-  background-color: var(--color-light-wood-beige);
+  background-color: var(--color-clean-white); /* Changed to clean white */
   border-radius: 0.5rem;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   padding: 2rem;
@@ -628,6 +628,7 @@ h1, h2, h3, h4, h5, h6 {
   flex-direction: column;
   align-items: center;
   text-align: center;
+  background-color: var(--color-light-wood-beige);
 }
 
 .feature-icon {
@@ -661,7 +662,7 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   align-items: center;
   padding: 4rem 2rem;
-  background-color: var(--color-clean-white);
+  background-color: var(--color-light-wood-beige); /* Changed to light wood beige */
   color: var(--color-deep-black);
   scroll-snap-align: start;
 }
