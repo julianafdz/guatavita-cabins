@@ -699,7 +699,7 @@ h1, h2, h3, h4, h5, h6 {
 .section-image-block {
   flex: 1;
   position: relative;
-  height: 400px; /* Fixed height for image block */
+  height: 500px; /* Fixed height for image block */
   width: 100%;
   border-radius: 0.5rem;
   overflow: hidden;

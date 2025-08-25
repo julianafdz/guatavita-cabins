@@ -15,7 +15,7 @@ export interface Cabin {
 export const cabins: Cabin[] = [
   {
     id: '1',
-    name: 'Cabin A (Single)',
+    name: 'Cabin Tótem 5 (Single)',
     slug: 'cabin-a',
     type: 'single',
     capacity: {
@@ -32,14 +32,14 @@ export const cabins: Cabin[] = [
       'Wi-Fi',
     ],
     images: [
-      '/images/cabins/cabin-a-1.jpg',
+      '/images/cabins/cabin-totem-5.jpeg',
       '/images/cabins/cabin-a-2.jpg',
       '/images/cabins/cabin-a-3.jpg',
     ],
   },
   {
     id: '2',
-    name: 'Cabin B (Single)',
+    name: 'Cabin Neia (Single)',
     slug: 'cabin-b',
     type: 'single',
     capacity: {
@@ -53,17 +53,16 @@ export const cabins: Cabin[] = [
       'Small dining area',
       'Outdoor seating area',
       'Wi-Fi',
-      'Smart TV',
     ],
     images: [
-      '/images/cabins/cabin-b-1.jpg',
+      '/images/cabins/cabin-single.jpeg',
       '/images/cabins/cabin-b-2.jpg',
       '/images/cabins/cabin-b-3.jpg',
     ],
   },
   {
     id: '3',
-    name: 'Cabin C (Single)',
+    name: 'Cabin Sia (Single)',
     slug: 'cabin-c',
     type: 'single',
     capacity: {
@@ -80,14 +79,14 @@ export const cabins: Cabin[] = [
       'Patio access',
     ],
     images: [
-      '/images/cabins/cabin-c-1.jpg',
+      '/images/cabins/cabin-single.jpeg',
       '/images/cabins/cabin-c-2.jpg',
       '/images/cabins/cabin-c-3.jpg',
     ],
   },
   {
     id: '4',
-    name: 'Cabin D (Single)',
+    name: 'Cabin Sue (Single)',
     slug: 'cabin-d',
     type: 'single',
     capacity: {
@@ -104,14 +103,14 @@ export const cabins: Cabin[] = [
       'Heating',
     ],
     images: [
-      '/images/cabins/cabin-d-1.jpg',
+      '/images/cabins/cabin-single.jpeg',
       '/images/cabins/cabin-d-2.jpg',
       '/images/cabins/cabin-d-3.jpg',
     ],
   },
   {
     id: '5',
-    name: 'Cabin E (Double)',
+    name: 'Cabin Gua (Double)',
     slug: 'cabin-e',
     type: 'double',
     capacity: {
@@ -127,11 +126,10 @@ export const cabins: Cabin[] = [
       'Living room with sofa bed',
       'Outdoor BBQ area',
       'Wi-Fi',
-      'Smart TV',
       'Washing machine',
     ],
     images: [
-      '/images/cabins/cabin-e-1.jpg',
+      '/images/cabins/cabin-double.jpeg',
       '/images/cabins/cabin-e-2.jpg',
       '/images/cabins/cabin-e-3.jpg',
     ],
