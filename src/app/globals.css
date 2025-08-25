@@ -1,3 +1,5 @@
+/* Your custom styles */
+
 :root {
   --color-golden-wood: #D9A441;
   --color-light-wood-beige: #F5DEB3;
@@ -19,14 +21,14 @@
 body {
   margin: 0;
   color: rgb(var(--foreground-rgb));
-  background: rgb(var(--background-rgb));
-  font-family: lato;
+  background: var(--color-clean-white); /* Change to Clean white */
+  font-family: var(--font-lato);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: lato;
+  font-family: var(--font-lato);
   color: var(--color-deep-black); /* Default for headings */
 }
 
@@ -35,9 +37,9 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background-color: var(--color-light-wood-beige);
+  background-color: var(--color-clean-white); /* Change to Clean white */
   color: var(--color-deep-black);
-  font-family: lato;
+  font-family: var(--font-lato);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -80,7 +82,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .header-logo {
-  font-family: lato;
+  font-family: var(--font-lato);
   font-size: 1.5rem; /* Approximation based on image */
   font-weight: bold;
   color: var(--color-clean-white);
@@ -101,7 +103,7 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--color-clean-white);
   text-decoration: none;
   transition: color 0.3s ease-in-out;
-  font-family: lato; /* Assuming Lato for nav links based on image */
+  font-family: var(--font-lato); /* Assuming Lato for nav links based on image */
   font-size: 1rem;
 }
 
@@ -133,11 +135,11 @@ h1, h2, h3, h4, h5, h6 {
   margin-left: auto;
   margin-right: auto;
   padding: 2rem;
-  background-color: var(--color-light-wood-beige); /* Background for content area */
+  background-color: var(--color-clean-white); /* Background for content area */
 }
 
 .page-title {
-  font-family: lato;
+  font-family: var(--font-lato);
   font-size: 2.5rem;
   font-weight: bold;
   text-align: center;
@@ -150,7 +152,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .section-title {
-  font-family: lato;
+  font-family: var(--font-lato);
   font-size: 1.875rem;
   font-weight: 600;
   color: var(--color-deep-black);
@@ -160,7 +162,7 @@ h1, h2, h3, h4, h5, h6 {
 .section-paragraph,
 .section-paragraph-mb,
 .section-paragraph-mt {
-  font-family: lato;
+  font-family: var(--font-lato);
   font-size: 1.125rem;
   color: var(--color-soft-charcoal);
   line-height: 1.625;
@@ -177,7 +179,7 @@ h1, h2, h3, h4, h5, h6 {
 .section-list {
   list-style: disc;
   list-style-position: inside;
-  font-family: lato;
+  font-family: var(--font-lato);
   font-size: 1.125rem;
   color: var(--color-soft-charcoal);
   line-height: 1.625;
@@ -189,11 +191,11 @@ h1, h2, h3, h4, h5, h6 {
   margin-left: auto;
   margin-right: auto;
   padding: 2rem;
-  background-color: var(--color-light-wood-beige); /* Background for content area */
+  background-color: var(--color-clean-white); /* Background for content area */
 }
 
 .cabins-title {
-  font-family: lato;
+  font-family: var(--font-lato);
   font-size: 2.5rem;
   font-weight: bold;
   text-align: center;
@@ -202,7 +204,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .cabins-description {
-  font-family: lato;
+  font-family: var(--font-lato);
   font-size: 1.125rem;
   color: var(--color-soft-charcoal);
   text-align: center;
@@ -221,7 +223,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .cabin-card {
-  background-color: var(--color-clean-white);
+  background-color: var(--color-light-wood-beige);
   border-radius: 0.5rem;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   overflow: hidden;
@@ -254,7 +256,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .cabin-name {
-  font-family: lato;
+  font-family: var(--font-lato);
   font-size: 1.5rem;
   font-weight: 600;
   color: var(--color-deep-black);
@@ -262,7 +264,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .cabin-description-short {
-  font-family: lato;
+  font-family: var(--font-lato);
   color: var(--color-soft-charcoal);
   margin-bottom: 1rem;
   flex-grow: 1;
@@ -278,7 +280,7 @@ h1, h2, h3, h4, h5, h6 {
 .cabin-capacity {
   color: var(--color-soft-charcoal);
   font-weight: bold;
-  font-family: lato;
+  font-family: var(--font-lato);
   font-size: 0.9rem;
 }
 
@@ -291,7 +293,7 @@ h1, h2, h3, h4, h5, h6 {
   transition: background-color 0.3s ease-in-out;
   border: none;
   cursor: pointer;
-  font-family: lato;
+  font-family: var(--font-lato);
   font-size: 0.9rem;
 }
 
@@ -305,11 +307,11 @@ h1, h2, h3, h4, h5, h6 {
   margin-left: auto;
   margin-right: auto;
   padding: 2rem;
-  background-color: var(--color-light-wood-beige); /* Background for content area */
+  background-color: var(--color-clean-white); /* Background for content area */
 }
 
 .activities-title {
-  font-family: lato;
+  font-family: var(--font-lato);
   font-size: 2.5rem;
   font-weight: bold;
   text-align: center;
@@ -318,7 +320,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .activities-description-intro {
-  font-family: lato;
+  font-family: var(--font-lato);
   font-size: 1.125rem;
   color: var(--color-soft-charcoal);
   text-align: center;
@@ -332,7 +334,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .activity-card {
-  background-color: var(--color-clean-white);
+  background-color: var(--color-light-wood-beige);
   border-radius: 0.5rem;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   overflow: hidden;
@@ -359,7 +361,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .activity-name {
-  font-family: lato;
+  font-family: var(--font-lato);
   font-size: 1.5rem;
   font-weight: 600;
   color: var(--color-deep-black);
@@ -367,7 +369,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .activity-description {
-  font-family: lato;
+  font-family: var(--font-lato);
   color: var(--color-soft-charcoal);
   line-height: 1.625;
 }
@@ -378,11 +380,11 @@ h1, h2, h3, h4, h5, h6 {
   margin-left: auto;
   margin-right: auto;
   padding: 2rem;
-  background-color: var(--color-light-wood-beige); /* Background for content area */
+  background-color: var(--color-clean-white); /* Background for content area */
 }
 
 .booking-title {
-  font-family: var(--font-merriweather);
+  font-family: var(--font-lato);
   font-size: 2.5rem;
   font-weight: bold;
   text-align: center;
@@ -391,7 +393,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .booking-intro-description {
-  font-family: lato;
+  font-family: var(--font-lato);
   font-size: 1.125rem;
   color: var(--color-soft-charcoal);
   text-align: center;
@@ -405,7 +407,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .booking-card {
-  background-color: var(--color-clean-white);
+  background-color: var(--color-light-wood-beige);
   border-radius: 0.5rem;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   padding: 2rem;
@@ -416,7 +418,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .booking-method-title {
-  font-family: lato;
+  font-family: var(--font-lato);
   font-size: 1.875rem;
   font-weight: 600;
   color: var(--color-deep-black);
@@ -424,7 +426,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .booking-method-description {
-  font-family: lato;
+  font-family: var(--font-lato);
   color: var(--color-soft-charcoal);
   line-height: 1.625;
   margin-bottom: 1.5rem;
@@ -439,7 +441,7 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 1.25rem;
   transition: background-color 0.3s ease-in-out;
   text-decoration: none;
-  font-family: lato;
+  font-family: var(--font-lato);
 }
 
 .booking-form-button:hover {
@@ -467,7 +469,7 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 1.25rem;
   transition: background-color 0.3s ease-in-out;
   text-decoration: none;
-  font-family: lato;
+  font-family: var(--font-lato);
 }
 
 .airbnb-button:hover {
@@ -483,7 +485,7 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 1.25rem;
   transition: background-color 0.3s ease-in-out;
   text-decoration: none;
-  font-family: lato;
+  font-family: var(--font-lato);
 }
 
 .bookingcom-button:hover {
@@ -496,7 +498,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .booking-info-title {
-  font-family: lato;
+  font-family: var(--font-lato);
   font-size: 1.875rem;
   font-weight: 600;
   color: var(--color-deep-black);
@@ -504,14 +506,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .booking-info-paragraph {
-  font-family: lato;
+  font-family: var(--font-lato);
   font-size: 1.125rem;
   color: var(--color-soft-charcoal);
   line-height: 1.625;
 }
 
 .booking-info-paragraph-mt {
-  font-family: lato;
+  font-family: var(--font-lato);
   font-size: 1.125rem;
   color: var(--color-soft-charcoal);
   line-height: 1.625;
@@ -562,7 +564,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .hero-title-alt {
-  font-family: lato;
+  font-family: var(--font-lato);
   font-size: 4rem;
   font-weight: bold;
   margin-bottom: 2rem;
@@ -575,7 +577,7 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   align-items: center;
   padding: 4rem 2rem;
-  background-color: var(--color-light-wood-beige);
+  background-color: var(--color-clean-white);
   color: var(--color-deep-black);
   scroll-snap-align: start;
 }
@@ -632,7 +634,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .footer-text {
-  font-family: lato;
+  font-family: var(--font-lato);
   font-size: 0.9rem;
   margin-bottom: 0.5rem;
   color: var(--color-clean-white);
@@ -672,7 +674,7 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
   background-color: var(--color-golden-wood);
   color: var(--color-deep-black);
-  font-family: lato;
+  font-family: var(--font-lato);
   font-weight: bold;
   padding: 0.75rem 1.5rem;
   border-radius: 9999px;
