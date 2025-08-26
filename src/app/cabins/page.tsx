@@ -12,29 +12,27 @@ export default function CabinsPage() {
 
       <div className="cabins-grid">
         {cabins.map((cabin) => (
-          <Link key={cabin.id} href={`/cabins/${cabin.slug}`} className="cabin-card-link">
-            <div className="cabin-card">
-              <div className="cabin-image-wrapper">
-                <Image 
-                  src={cabin.images[0] || '/images/placeholder.jpg'}
-                  alt={cabin.name}
-                  layout="fill"
-                  objectFit="cover"
-                  className="cabin-image"
-                />
-              </div>
-              <div className="cabin-card-content">
-                <h2 className="cabin-name">{cabin.name}</h2>
-                <p className="cabin-description-short">{cabin.description.substring(0, 100)}...</p>
-                <div className="cabin-details-row">
-                  <span className="cabin-capacity">Capacity: {cabin.capacity.min}-{cabin.capacity.max} people</span>
-                  <button className="view-details-button">
-                    View Details
-                  </button>
-                </div>
+          <div key={cabin.id} className="cabin-card">
+            <div className="cabin-image-wrapper">
+              <Image 
+                src={cabin.images[0] || '/images/placeholder.jpg'}
+                alt={cabin.name}
+                layout="fill"
+                objectFit="cover"
+                className="cabin-image"
+              />
+            </div>
+            <div className="cabin-card-content">
+              <h2 className="cabin-name">{cabin.name}</h2>
+              <p className="cabin-description-short">{cabin.description.substring(0, 100)}...</p>
+              <div className="cabin-details-row">
+                <span className="cabin-capacity">Capacity: {cabin.capacity.min}-{cabin.capacity.max} people</span>
+                <Link href={`/cabins/${cabin.slug}`} className="view-details-button">
+                  View Details
+                </Link>
               </div>
             </div>
-          </Link>
+          </div>
         ))}
       </div>
     </div>

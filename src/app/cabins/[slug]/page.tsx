@@ -1,17 +1,49 @@
-import { cabins } from "../../../src/data/cabins";
-import { notFound } from 'next/navigation';
-import Image from 'next/image';
-import { Carousel } from 'react-responsive-carousel';
-import 'react-responsive-carousel/lib/styles/carousel.min.css'; // requires a loader
-import Link from 'next/link';
+'use client';
 
-interface CabinPageProps {
-  params: {
-    slug: string;
-  };
+import Image from 'next/image';
+import { notFound } from 'next/navigation';
+import { cabins } from '../../../data/cabins';
+import { IoBedOutline, IoTvOutline, IoWifi, IoRestaurantOutline, IoSnowOutline, IoWaterOutline } from 'react-icons/io5';
+import { FaFire, FaDog } from 'react-icons/fa';
+import { Carousel } from 'react-responsive-carousel';
+import 'react-responsive-carousel/lib/styles/carousel.min.css'; // Carousel styles
+
+interface CabinDetailPageProps {
+  params: { slug: string };
 }
 
-export default function CabinPage({ params }: CabinPageProps) {
+const getAmenityIcon = (amenity: string) => {
+  switch (amenity.toLowerCase()) {
+    case 'queen-size bed':
+    case 'king-size bed':
+    case 'double bed':
+    case 'two queen-size beds':
+      return <IoBedOutline />;
+    case 'private bathroom':
+      return <IoWaterOutline />;
+    case 'equipped kitchenette':
+    case 'small dining area':
+    case 'full kitchen':
+    case 'large dining area':
+      return <IoRestaurantOutline />;
+    case 'fireplace':
+      return <FaFire />;
+    case 'wi-fi':
+      return <IoWifi />;
+    case 'mini-fridge':
+      return <IoRestaurantOutline />; // Or a more specific fridge icon if available
+    case 'desk/workspace':
+      return <IoTvOutline />; // Placeholder, consider a desk icon if available
+    case 'heating':
+      return <IoSnowOutline />; // Placeholder, consider a heater icon if available
+    case 'pet-friendly':
+      return <FaDog />;
+    default:
+      return null;
+  }
+};
+
+const CabinDetailPage = ({ params }: CabinDetailPageProps) => {
   const cabin = cabins.find((c) => c.slug === params.slug);
 
   if (!cabin) {
@@ -19,60 +51,54 @@ export default function CabinPage({ params }: CabinPageProps) {
   }
 
   return (
-    <div className="container mx-auto p-8">
-      <h1 className="text-4xl font-bold text-center text-amber-800 mb-8">{cabin.name}</h1>
-      
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-        <div className="lg:col-span-1">
-          <div className="rounded-lg shadow-lg overflow-hidden">
-            <Carousel showThumbs={true} infiniteLoop={true} dynamicHeight={false} className="cabin-carousel">
-              {cabin.images.map((image, index) => (
-                <div key={index}>
-                  <Image
-                    src={image}
-                    alt={`${cabin.name} image ${index + 1}`}
-                    width={800}
-                    height={600}
-                    objectFit="cover"
-                    className="rounded-lg"
-                  />
-                </div>
-              ))}
-            </Carousel>
-          </div>
+    <div className="cabin-detail-container">
+      <h1 className="cabin-detail-title">{cabin.name}</h1>
+      <p className="cabin-detail-type">{cabin.type} Cabin</p>
+
+      <div className="cabin-detail-image-gallery">
+        <Carousel showThumbs={false} infiniteLoop={true} dynamicHeight={false} className="cabin-carousel">
+          {cabin.images.map((image, index) => (
+            <div key={index} className="cabin-detail-image-wrapper">
+              <Image
+                src={image}
+                alt={`${cabin.name} image ${index + 1}`}
+                layout="fill"
+                objectFit="cover"
+                className="cabin-detail-image"
+              />
+            </div>
+          ))}
+        </Carousel>
+      </div>
+
+      <div className="cabin-detail-content">
+        <div className="cabin-detail-description-block">
+          <h2 className="cabin-detail-subtitle">About This Cabin</h2>
+          <p className="cabin-detail-description">{cabin.description}</p>
         </div>
 
-        <div className="lg:col-span-1">
-          <div className="bg-white rounded-lg shadow-lg p-8">
-            <h2 className="text-3xl font-semibold text-amber-700 mb-4">Description</h2>
-            <p className="text-lg text-gray-700 leading-relaxed mb-6">{cabin.description}</p>
+        <div className="cabin-detail-amenities-block">
+          <h2 className="cabin-detail-subtitle">Amenities</h2>
+          <ul className="cabin-detail-amenities-list">
+            {cabin.amenities.map((amenity, index) => (
+              <li key={index} className="cabin-detail-amenity-item">
+                {getAmenityIcon(amenity)}
+                <span>{amenity}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
 
-            <h2 className="text-3xl font-semibold text-amber-700 mb-4">Amenities</h2>
-            <ul className="list-disc list-inside text-lg text-gray-700 leading-relaxed grid grid-cols-1 md:grid-cols-2 gap-2">
-              {cabin.amenities.map((amenity, index) => (
-                <li key={index}>{amenity}</li>
-              ))}
-            </ul>
-
-            <div className="mt-6 bg-yellow-100 border-l-4 border-amber-500 text-amber-700 p-4 rounded-md">
-              <p className="font-bold">Capacity:</p>
-              <p>{cabin.capacity.min} - {cabin.capacity.max} people</p>
-            </div>
-
-            <div className="mt-8 text-center">
-              <Link href="/booking" className="bg-amber-600 hover:bg-amber-700 text-white font-bold py-3 px-6 rounded-full text-xl transition-colors duration-300">
-                Book Now
-              </Link>
-            </div>
-          </div>
+        <div className="cabin-detail-booking-info">
+          <h2 className="cabin-detail-subtitle">Capacity</h2>
+          <p className="cabin-detail-capacity">
+            {cabin.capacity.min} - {cabin.capacity.max} Guests
+          </p>
+          <button className="cabin-detail-book-button">Book Now</button>
         </div>
       </div>
     </div>
   );
-}
+};
 
-export async function generateStaticParams() {
-  return cabins.map((cabin) => ({
-    slug: cabin.slug,
-  }));
-}
+export default CabinDetailPage;
