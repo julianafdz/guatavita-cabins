@@ -36,5 +36,11 @@ export const activities: Activity[] = [
     description: 'Enjoy a variety of watersports on the tranquil Guatavita Lake, including kayaking, paddleboarding, and boat tours. A refreshing way to experience the lake\'s beauty.',
     image: '/images/activities/watersports.jpeg',
   },
+  {
+    id: '6',
+    name: 'ATV Sports Adventure',
+    description: 'Experience the thrill of ATV sports on rugged trails around Guatavita. Our guided tours cater to all skill levels, providing an exciting way to explore the scenic countryside.',
+    image: '/images/activities/atv-sports.jpeg',
+  },
 ];
 
