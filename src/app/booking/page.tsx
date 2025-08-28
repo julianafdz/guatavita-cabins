@@ -10,21 +10,6 @@ export default function BookingPage() {
 
       <div className="booking-methods-grid">
         <div className="booking-card">
-          <h2 className="booking-method-title">Direct Booking via Google Form</h2>
-          <p className="booking-method-description">
-            For direct reservations and personalized assistance, please fill out our Google Booking Form. We will get back to you shortly to confirm your booking.
-          </p>
-          <Link
-            href="https://forms.gle/YOUR_GOOGLE_FORM_LINK_HERE" // Replace with your actual Google Form link
-            target="_blank"
-            rel="noopener noreferrer"
-            className="booking-form-button"
-          >
-            Fill Out Booking Form
-          </Link>
-        </div>
-
-        <div className="booking-card">
           <h2 className="booking-method-title">Book on Airbnb & Booking.com</h2>
           <p className="booking-method-description">
             You can also find our cabins listed on popular platforms like Airbnb and Booking.com for convenient booking options.

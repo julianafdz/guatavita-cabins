@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { cabins } from "../../data/cabins";
 import Image from "next/image";
 
@@ -27,9 +26,14 @@ export default function CabinsPage() {
               <p className="cabin-description-short">{cabin.description.substring(0, 100)}...</p>
               <div className="cabin-details-row">
                 <span className="cabin-capacity">Capacity: {cabin.capacity.min}-{cabin.capacity.max} people</span>
-                <Link href={`/cabins/${cabin.slug}`} className="view-details-button">
+                <a 
+                  href={cabin.airbnbLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="view-details-button"
+                >
                   View Details
-                </Link>
+                </a>
               </div>
             </div>
           </div>
