@@ -19,6 +19,7 @@ const lato = Lato({
 export const metadata: Metadata = {
   title: "Guatavita Cabins - Your perfect mountain getaway",
   description: "Cozy cabins with splendid views of the Guatavita lake, perfect for a relaxing escape.",
+  viewport: "width=device-width, initial-scale=1",
 };
 
 export default function RootLayout({
