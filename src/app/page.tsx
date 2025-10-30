@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -24,7 +25,7 @@ export default function Home() {
       <section className="cozy-cabins-intro-section">
         <div className="cozy-cabins-intro-container">
           <h2 className="cozy-cabins-intro-title">Cozy Cabin Rentals</h2>
-          <a href="/booking" className="cozy-cabins-intro-button">Book Now</a>
+          <Link href="/booking" className="cozy-cabins-intro-button">Book Now</Link>
 
           <div className="cozy-cabins-features-grid">
             <div className="feature-item">
